@@ -33,12 +33,15 @@ class Schedule{
         System.out.println("----------------\n");
         printProcesses();
         System.out.println("--------------------------------\n\n\n");
-        System.out.print("0");
+        System.out.println("Proccess Order");
+        System.out.println("----------------\n");
         while(!hasFinished()){
+            double startTime = clock.getValue();
             Computation computation = scheduleAlgorithm.compute(processing, notArrived , completed, clock);
-            System.out.print("|" + computation.getName()  + "  " + clock.getValue());
+
+            System.out.println("Start: " + startTime + "    " + computation.getName()  + "  End: " + clock.getValue());
         }
-        System.out.print("|");
+
         System.out.println("\n\n\n--------------------------------");
         System.out.println("Completed");
         System.out.println("----------\n");
